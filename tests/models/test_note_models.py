@@ -8,7 +8,7 @@ from app.models.note_models import Note
 
 def test_empty_title_rise_value_error() -> None:
 	with pytest.raises(ValueError, match='Title must be a non-empty string.'):
-		_ = Note(
+		Note(
 			title="",
 			content="Note content",
 			tags={"python", "pytest"},
@@ -18,7 +18,7 @@ def test_empty_title_rise_value_error() -> None:
 
 def test_empty_content_rise_value_error() -> None:
 	with pytest.raises(ValueError, match='Content must be a non-empty string.'):
-		_ = Note(
+		Note(
 			title="Title",
 			content="",
 			tags={"python", "pytest"},
@@ -60,7 +60,7 @@ def test_empty_tags_are_removed() -> None:
 	note = Note(
 		title="Title",
 		content="Note content",
-		tags={"Python", "  pyTest", "", "  "},
+		tags={"python", "  pytest", "", "  "},
 		updated_at=datetime.now()
 	)
-	assert len(note.tags) == 2
+	assert note.tags == {"python", "pytest"}

@@ -1,0 +1,54 @@
+[project]
+name = "flashcards-ai-obsidian-pro"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "mypy==1.15.0",
+    "pytest==8.3.4",
+    "pytest-cov>=6.0.0",
+    "ruff==0.9.5",
+]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+testpaths = [
+    "tests",
+    "conftest",
+]
+markers = [
+    "slow: marks tests as slow (deselect with '-m \"not slow\"')",
+    "smoke: business core tests",
+]
+addopts = [
+    "-ra -q",
+    "--cov=.",
+    "--cov-report",
+    "term-missing:skip-covered",
+    "--cov-fail-under=80"
+]
+
+[tool.coverage.run]
+omit = [
+    "*/tests/*.py",
+    "conftest/*"
+]
+
+[tool.mypy]
+disallow_untyped_defs = true  # Wymaga typów dla wszystkich funkcji
+disallow_untyped_calls = true  # Nie pozwala na wywoływanie funkcji bez adnotacji typów
+disallow_incomplete_defs = true  # Wymaga typów dla parametrów i zwracanych wartości
+disallow_subclassing_any = true  # Zabrania dziedziczenia po nieznanych typach
+warn_return_any = true  # Ostrzega, gdy zwracany typ to Any
+warn_unused_ignores = true  # Ostrzega, gdy mypy-ignore nie jest potrzebne
+warn_redundant_casts = true  # Ostrzega przed zbędnymi rzutowaniami typu
+warn_unused_configs = true  # Ostrzega, gdy jakaś opcja konfiguracji jest nieużywana
+no_implicit_optional = true  # Nie pozwala na None, jeśli nie jest jawnie podany w Optional
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_untyped_defs = false

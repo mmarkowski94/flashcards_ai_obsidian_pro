@@ -2,8 +2,9 @@ line-length = 120
 target-version = 'py313'
 fix = true
 include = [
-    "conftest.py",
-    "app/**/*.py"
+    "conftest/**/*.py",
+    "app/**/*.py",
+    "tests/**/*.py"
 ]
 
 [lint]

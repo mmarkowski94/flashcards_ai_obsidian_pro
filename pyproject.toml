@@ -4,18 +4,23 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "openai>=1.63.0",
+]
 
 [dependency-groups]
 dev = [
     "mypy==1.15.0",
     "pytest==8.3.4",
     "pytest-cov>=6.0.0",
+    "pytest-dotenv>=0.5.2",
+    "pytest-env>=1.1.5",
     "ruff==0.9.5",
 ]
 
 [tool.pytest.ini_options]
 minversion = "6.0"
+env_files = ".env/.env-pytest"
 testpaths = [
     "tests",
     "conftest",

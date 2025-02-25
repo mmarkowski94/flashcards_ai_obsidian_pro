@@ -1,7 +1,8 @@
 from pathlib import Path
+from typing import AnyStr
 
 
-def open_file(file_path: Path):
+def open_file(file_path: Path) -> AnyStr:
     """
     Opens a file and returns its content as a string.
 
@@ -9,7 +10,7 @@ def open_file(file_path: Path):
         file_path (Path): The path to the file to be opened.
 
     Returns:
-        str: The content of the file.
+        AnyStr: The content of the file.
 
     Raises:
         FileNotFoundError: If the file at the specified path does not exist.

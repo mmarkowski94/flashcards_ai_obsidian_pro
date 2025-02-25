@@ -1,0 +1,22 @@
+DEBUG debug message)
+INFO info message)
+WARNING warning message)
+ERROR error message)
+CRITICAL critical message)
+ERROR exception message)
+Traceback (most recent call last):
+  File "C:\Users\mateu\projects\flashcards_ai_obsidian_pro\app\main.py", line 25, in main
+    1 / 0
+    ~~^~~
+ZeroDivisionError: division by zero
+2025-02-15T10:15:19+0100 DEBUG debug message)
+2025-02-15T10:15:19+0100 INFO info message)
+2025-02-15T10:15:19+0100 WARNING warning message)
+2025-02-15T10:15:19+0100 ERROR error message)
+2025-02-15T10:15:19+0100 CRITICAL critical message)
+2025-02-15T10:15:19+0100 ERROR exception message)
+Traceback (most recent call last):
+  File "C:\Users\mateu\projects\flashcards_ai_obsidian_pro\app\main.py", line 25, in main
+    1 / 0
+    ~~^~~
+ZeroDivisionError: division by zero

@@ -1,3 +1,7 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
 [project]
 name = "flashcards-ai-obsidian-pro"
 version = "0.1.0"
@@ -6,10 +10,19 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "openai>=1.63.0",
+    "tinydb>=4.8.2",
+    "typer>=0.15.1",
 ]
+
+[tool.flit.module]
+name = "app"
+
+[project.scripts]
+card = "app.cli.main:app"
 
 [dependency-groups]
 dev = [
+    "flit>=3.10.1",
     "mypy==1.15.0",
     "pytest==8.3.4",
     "pytest-cov>=6.0.0",

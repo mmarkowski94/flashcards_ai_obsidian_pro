@@ -8,7 +8,7 @@ from typing import Any
 
 def setup_logging() -> None:
     if os.getenv("TESTS") == "1":
-        return None
+        return
 
     config_file: Path = Path(".logging_configs/config.toml")
     with open(config_file, "rb") as file:
